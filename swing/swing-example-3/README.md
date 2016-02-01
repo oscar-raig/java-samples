@@ -1,8 +1,11 @@
 
 
-# swing second example
+# Java swing example 3
 
-[Extract from this youtube tutorial](https://www.youtube.com/watch?v=svM0SBFqp4s)
+[Extract from this youtube tutorial: Advanced Java: Swing (GUI) Programming Part 3 -- Panels and Forms](https://www.youtube.com/watch?v=DJqlT1d67jI)
+
+[Extract from this youtube tutorial: Advanced Java: Swing (GUI) Programming Part 4 -- GridBagLayout] (https://www.youtube.com/watch?v=YKaea4ezQQE)
+
 
 
 
