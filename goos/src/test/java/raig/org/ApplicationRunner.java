@@ -4,8 +4,8 @@ package raig.org;
 public class ApplicationRunner {
   public static final String SNIPER_ID = "sniper";
   public static final String SNIPER_PASSWORD = "sniper";
-  private static final String STATUS_JOINING = "STATUS JOINING";
-  private static final String STATUS_LOST = "STATUS LOST";
+
+
   private AuctionSniperDriver driver;
 
   public void startBiddingIn(final FakeAuctionServer auction) {
@@ -23,12 +23,11 @@ public class ApplicationRunner {
     thread.setDaemon(true);
     thread.start();
     driver = new AuctionSniperDriver(1000);
-    driver.showsSniperStatus(STATUS_JOINING);
+    driver.showsSniperStatus(MainWindow.STATUS_JOINING);
   }
 
   public void showsSniperHasLostAuction() {
-
-    driver.showsSniperStatus(STATUS_LOST);
+    driver.showsSniperStatus(MainWindow.STATUS_LOST);
   }
 
 
