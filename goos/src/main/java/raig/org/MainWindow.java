@@ -13,8 +13,6 @@ public class MainWindow extends JFrame {
   public static final String STATUS_JOINING = "STATUS JOINING";
   public static final String STATUS_LOST = "STATUS LOST";
 
-
-
   private final JLabel sniperStatus =
           createLabel(STATUS_JOINING);
 
