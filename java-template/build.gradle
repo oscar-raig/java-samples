@@ -1,16 +1,14 @@
 apply plugin : "java"
 apply plugin : "application"
-apply plugin : "jacoco"
 apply plugin : "idea"
-apply plugin: 'checkstyle'
-apply plugin: 'com.github.kt3k.coveralls'
+
+
+
+apply from: 'gradle/code-coverage.gradle'
+apply from: 'gradle/code-quality.gradle'
 
 mainClassName="raig.org.HelloWorld"
 
-jacoco {
-    toolVersion = "0.7.1.201405082137"
-    reportsDir = file("$buildDir/reports/jacoco/")
-}
 
 repositories {
     mavenCentral()
@@ -20,32 +18,6 @@ task getHomeDir << {
     println gradle.gradleHomeDir
 }
 
-jacocoTestReport {
-    reports {
-        xml.enabled = true
-        csv.enabled = false
-        html.destination "${buildDir}/jacocoHtml"
-        html.enabled = true
-    }
-}
-
-test {
-    jacoco {
-        append = false
-        destinationFile = file("$buildDir/jacoco/jacocoTest.exec")
-        classDumpFile = file("$buildDir/jacoco/classpathdumps")
-    }
-}
-
-
-jacoco {
-    applyTo run
-}
-
-task applicationCodeCoverageReport(type:JacocoReport){
-    executionData run
-    sourceSets sourceSets.main
-}
 
 tasks.withType(Test) {
     testLogging {
