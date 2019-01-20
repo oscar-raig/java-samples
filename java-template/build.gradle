@@ -14,11 +14,6 @@ repositories {
     mavenCentral()
 }
 
-task getHomeDir << {
-    println gradle.gradleHomeDir
-}
-
-
 tasks.withType(Test) {
     testLogging {
         exceptionFormat "full"
